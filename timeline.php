@@ -1,32 +1,32 @@
 <?php
 //incluimos todas las clases necesarias e iniciamos sus objetos.
-//require_once '../sesiones.php';
-//require_once '../users.php';
+require_once '../sesiones.php';
+require_once '../users.php';
 require_once 'cliente.php';
 require_once 'servicio.php';
 require_once 'recursos.php';
 
-/*$usuario=new User();
-$sesion=new Sesiones();*/
+$usuario=new User();
+$sesion=new Sesiones();
 $cliente=new Cliente();
 $servicio=new Servicio();
 $recursos=new Recursos();
 
-/*if (isset($_SESSION['usuario'])==false) {
+if (isset($_SESSION['usuario'])==false) {
   header('Location: ../index.php');
-}else {*/
+}else {
  ?>
 <!DOCTYPE html>
 <html >
 <head>
   <meta charset="UTF-8">
   <title>Nuevo servicio</title>
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel="stylesheet" href="css/formulario.css">
+    <link rel="stylesheet" href="../css/formulario.css">
     <link rel="shortcut icon" href="../imagenes/favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/dashboard.css" />
-    <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/timeline.css">
 </head>
 <body>
   <head>
@@ -36,9 +36,9 @@ $recursos=new Recursos();
 <div class="codrops-top clearfix">
   <?php
     //llamamos a la función para devolver el nombre de usuario.
-  //  $nombreuser=$usuario->nombreUsuario($_SESSION['usuario']);
+    $nombreuser=$usuario->nombreUsuario($_SESSION['usuario']);
     //sacamos el nombre de usuario por su id
-    //echo "<a><strong>Bienvenido ".$nombreuser['name']."</strong></a>";
+    echo "<a><strong>Bienvenido ".$nombreuser['name']."</strong></a>";
    ?>
   <span class="right"><a href="../logout.php" id='logout'>Cerrar Sesion</a></span>
 </div><!--/ Codrops top bar -->
@@ -143,4 +143,4 @@ $recursos=new Recursos();
 
 </body>
 </html>
- <?php// } ?>
+ <?php } ?>
